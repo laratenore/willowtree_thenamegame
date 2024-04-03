@@ -12,7 +12,6 @@ struct Collaborator: Codable {
 
 // MARK: - Headshot
 struct Headshot: Codable {
-    let alt: String
     let height: Int?
     let width: Int?
     let id: String

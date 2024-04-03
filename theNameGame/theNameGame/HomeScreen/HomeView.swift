@@ -12,20 +12,12 @@ protocol HomePageViewInterface: AnyObject {
 class HomePageView: UIView, HomePageViewInterface {
     weak var delegate: HomePageViewDelegate?
     
-    private let backgroundImage: UIImageView = {
-        let imageView =  UIImageView(frame: UIScreen.main.bounds)
-        imageView.image = UIImage(named: "theNameGameBG")
-        imageView.contentMode = .scaleAspectFill
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        return imageView
-    }()
-    
     private lazy var practiceButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = .systemBlue
+        button.backgroundColor = WillowColors.darkBlue.color
         button.tintColor = .white
         button.layer.cornerRadius = 15
-        button.layer.borderColor = UIColor.systemBlue.cgColor
+        button.layer.borderColor = WillowColors.darkBlue.color.cgColor
         button.layer.borderWidth = 5
         let titleAttributes: [NSAttributedString.Key: Any] = [
             .font: UIFont.systemFont(ofSize: 17)
@@ -34,19 +26,6 @@ class HomePageView: UIView, HomePageViewInterface {
         button.setAttributedTitle(titleAttributedString, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(practiceButtonTapped), for: .touchUpInside)
-        return button
-    }()
-    
-    private lazy var timedButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.backgroundColor = .systemBlue
-        button.tintColor = .white
-        button.layer.cornerRadius = 15
-        button.layer.borderColor = UIColor.systemBlue.cgColor
-        button.layer.borderWidth = 5
-        button.titleLabel?.text = "Timed Mode"
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.addTarget(self, action: #selector(timedButtonTapped), for: .touchUpInside)
         return button
     }()
     
@@ -63,10 +42,6 @@ class HomePageView: UIView, HomePageViewInterface {
         delegate?.gameSelected()
     }
     
-    @objc func timedButtonTapped(_ sender: UIButton) {
-     // handle the button being tapped
-    }
-    
     private func configureView() {
         backgroundColor = .white
         
@@ -75,19 +50,10 @@ class HomePageView: UIView, HomePageViewInterface {
     }
     
     private func addSubviews() {
-        addSubview(backgroundImage)
         addSubview(practiceButton)
-        sendSubviewToBack(backgroundImage)
     }
     
     private func defineSubviewsConstraints() {
-        NSLayoutConstraint.activate([
-            backgroundImage.topAnchor.constraint(equalTo: self.topAnchor),
-            backgroundImage.leadingAnchor.constraint(equalTo: self.leadingAnchor),
-            backgroundImage.trailingAnchor.constraint(equalTo: self.trailingAnchor),
-            backgroundImage.bottomAnchor.constraint(equalTo: self.bottomAnchor)
-        ])
-        
         NSLayoutConstraint.activate([
             practiceButton.topAnchor.constraint(greaterThanOrEqualTo: self.safeAreaLayoutGuide.topAnchor),
             practiceButton.leadingAnchor.constraint(equalTo: self.safeAreaLayoutGuide.leadingAnchor, constant: 16),

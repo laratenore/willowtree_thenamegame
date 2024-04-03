@@ -10,6 +10,9 @@
 		0EAA435E04D6A3039E30F6BB /* Pods_theNameGame_theNameGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B34EF5D150CD7934FC035412 /* Pods_theNameGame_theNameGameUITests.framework */; };
 		6F629886759F7D8885CE3489 /* Pods_theNameGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9656FDFF735F66622019BF1D /* Pods_theNameGameTests.framework */; };
 		73A7897B4A8B0ED5643E58F6 /* Pods_theNameGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E5795C62C8C0BAF4053D25F /* Pods_theNameGame.framework */; };
+		D41D17782BBB95450097B0C1 /* WillowColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41D17772BBB95450097B0C1 /* WillowColors.swift */; };
+		D4C9105E2BBC335A00231B9E /* CollaboratorsDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C9105D2BBC335A00231B9E /* CollaboratorsDataStore.swift */; };
+		D4C910612BBC748E00231B9E /* CollaboratorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4C910602BBC748E00231B9E /* CollaboratorCollectionViewCell.swift */; };
 		D4D688172BB9F22A0023B852 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D688162BB9F22A0023B852 /* AppDelegate.swift */; };
 		D4D688192BB9F22A0023B852 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D688182BB9F22A0023B852 /* SceneDelegate.swift */; };
 		D4D6881B2BB9F22A0023B852 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4D6881A2BB9F22A0023B852 /* HomeViewController.swift */; };
@@ -53,6 +56,9 @@
 		5C23990DD1924DA2BD2BEF92 /* Pods-theNameGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-theNameGameTests.debug.xcconfig"; path = "Target Support Files/Pods-theNameGameTests/Pods-theNameGameTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9656FDFF735F66622019BF1D /* Pods_theNameGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_theNameGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B34EF5D150CD7934FC035412 /* Pods_theNameGame_theNameGameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_theNameGame_theNameGameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D41D17772BBB95450097B0C1 /* WillowColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WillowColors.swift; sourceTree = "<group>"; };
+		D4C9105D2BBC335A00231B9E /* CollaboratorsDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaboratorsDataStore.swift; sourceTree = "<group>"; };
+		D4C910602BBC748E00231B9E /* CollaboratorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollaboratorCollectionViewCell.swift; sourceTree = "<group>"; };
 		D4D688132BB9F22A0023B852 /* theNameGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = theNameGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4D688162BB9F22A0023B852 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D4D688182BB9F22A0023B852 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -124,6 +130,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D4C9105F2BBC746900231B9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D4EA35BB2BBA1FFB0074B8CC /* GameView.swift */,
+				D4C910602BBC748E00231B9E /* CollaboratorCollectionViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		D4D6880A2BB9F22A0023B852 = {
 			isa = PBXGroup;
 			children = (
@@ -156,6 +171,7 @@
 				D4D6881F2BB9F22C0023B852 /* Assets.xcassets */,
 				D4D688212BB9F22C0023B852 /* LaunchScreen.storyboard */,
 				D4D688242BB9F22C0023B852 /* Info.plist */,
+				D41D17772BBB95450097B0C1 /* WillowColors.swift */,
 			);
 			path = theNameGame;
 			sourceTree = "<group>";
@@ -189,11 +205,12 @@
 		D4EA35B62BBA1FDB0074B8CC /* GameScreen */ = {
 			isa = PBXGroup;
 			children = (
+				D4C9105F2BBC746900231B9E /* View */,
 				D4EA35C02BBB0F6D0074B8CC /* Models */,
 				D4EA35B72BBA1FEB0074B8CC /* GameViewController.swift */,
 				D4EA35B92BBA1FF30074B8CC /* GameViewModel.swift */,
-				D4EA35BB2BBA1FFB0074B8CC /* GameView.swift */,
 				D4EA35BD2BBA20090074B8CC /* GameWorker.swift */,
+				D4C9105D2BBC335A00231B9E /* CollaboratorsDataStore.swift */,
 			);
 			path = GameScreen;
 			sourceTree = "<group>";
@@ -413,9 +430,12 @@
 				D4EA35BC2BBA1FFC0074B8CC /* GameView.swift in Sources */,
 				D4D6881B2BB9F22A0023B852 /* HomeViewController.swift in Sources */,
 				D4D688492BB9F2BC0023B852 /* HomeView.swift in Sources */,
+				D41D17782BBB95450097B0C1 /* WillowColors.swift in Sources */,
 				D4D688172BB9F22A0023B852 /* AppDelegate.swift in Sources */,
 				D4D688192BB9F22A0023B852 /* SceneDelegate.swift in Sources */,
+				D4C9105E2BBC335A00231B9E /* CollaboratorsDataStore.swift in Sources */,
 				D4EA35C32BBB14060074B8CC /* Collaborators.swift in Sources */,
+				D4C910612BBC748E00231B9E /* CollaboratorCollectionViewCell.swift in Sources */,
 				D4EA35BE2BBA20090074B8CC /* GameWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
